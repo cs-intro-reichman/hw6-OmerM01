@@ -221,15 +221,16 @@ public class Runigram {
 		int numRows = source.length;
 		int numCols = source[0].length;
 
-		if (target.length != numRows || target[0].length != numCols) {
+		if (target.length != numRows || target[0].length != numCols){
 			target = scaled(target, numCols, numRows);
 		}
-		for (int step = 0; step <= n; step++) {
+		for (int step = 0; step <= n; step++){
 			double alpha = (double) (n - step) / n;
 			Color[][] blendedImage = blend(source, target, alpha);
 			display(blendedImage);
 			StdDraw.pause(550);
-		}	}
+		}
+	}
 	
 	/** Creates a canvas for the given image. */
 	public static void setCanvas(Color[][] image) {
