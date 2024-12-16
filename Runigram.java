@@ -228,7 +228,7 @@ public class Runigram {
 			double alpha = (double) (n - step) / n;
 			Color[][] blendedImage = blend(source, target, alpha);
 			display(blendedImage);
-			StdDraw.pause(550);
+			StdDraw.pause(500);
 		}
 	}
 	
