@@ -22,6 +22,19 @@ public class Runigram {
 		
 		//// Write here whatever code you need in order to test your work.
 		//// You can continue using the image array.
+		Color[][] testImage = {
+			{ new Color(0, 0, 0), new Color(255, 0, 0) },
+			{ new Color(0, 255, 0), new Color(0, 0, 255) }
+		};
+	
+		// Print the test image
+		System.out.println("Test Image:");
+		print(testImage);
+	
+		// Test read and print together
+		System.out.println("\nReading and printing 'tinypic.ppm':");
+		Color[][] tinyPic = read("tinypic.ppm"); // Assuming 'read' is implemented
+		print(tinyPic);
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
@@ -81,8 +94,17 @@ public class Runigram {
 	 * Returns an image which is the horizontally flipped version of the given image. 
 	 */
 	public static Color[][] flippedHorizontally(Color[][] image) {
-		//// Replace the following statement with your code
-		return null;
+		int numRows = image.length;    // n of rows
+		int numCols = image[0].length; // n of columns
+		Color[][] flippedImage = new Color[numRows][numCols];
+	
+		// Flip each row horizontally
+		for (int i = 0; i < numRows; i++) {
+			for (int j = 0; j < numCols; j++) {
+				flippedImage[i][numCols - 1 - j] = image[i][j];
+			}
+		}
+		return flippedImage;
 	}
 	
 	/**
