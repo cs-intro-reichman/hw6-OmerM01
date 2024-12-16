@@ -218,8 +218,20 @@ public class Runigram {
 	 * of the source image.
 	 */
 	public static void morph(Color[][] source, Color[][] target, int n) {
-		//// Replace this comment with your code
-	}
+		int numRows = source.length;
+		int numCols = source[0].length;
+
+		if (target.length != numRows || target[0].length != numCols) {
+			target = scaled(target, numCols, numRows);
+		}
+		for (int step = 0; step <= n; step++) {
+			double alpha = (double) (n - step) / step;
+			Color[][] blendedImage = blend(source, target, alpha);
+	
+			// Display the intermediate result
+			display(blendedImage);
+			StdDraw.pause(500); // Pause for 500 milliseconds
+		}	}
 	
 	/** Creates a canvas for the given image. */
 	public static void setCanvas(Color[][] image) {
