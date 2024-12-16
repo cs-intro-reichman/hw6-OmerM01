@@ -47,6 +47,9 @@ public class Runigram {
 		System.out.println("greyscaled image:");
 		Color[][] greyImage = grayScaled(testImage);
 		print(greyImage);
+
+		Color[][] scaledImage = scaled(testImage, 3, 5);
+		print(scaledImage);
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
