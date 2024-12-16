@@ -225,12 +225,10 @@ public class Runigram {
 			target = scaled(target, numCols, numRows);
 		}
 		for (int step = 0; step <= n; step++) {
-			double alpha = (double) (n - step) / step;
+			double alpha = (double) (n - step) / n;
 			Color[][] blendedImage = blend(source, target, alpha);
-	
-			// Display the intermediate result
 			display(blendedImage);
-			StdDraw.pause(500); // Pause for 500 milliseconds
+			StdDraw.pause(550);
 		}	}
 	
 	/** Creates a canvas for the given image. */
