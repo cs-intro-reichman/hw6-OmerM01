@@ -36,13 +36,17 @@ public class Runigram {
 		Color[][] tinyPic = read("tinypic.ppm"); // Assuming 'read' is implemented
 		print(tinyPic);
 
-		System.out.println("Horizontally Flipped Image:");
+		System.out.println("horizontally flipped Image:");
 		Color[][] flippedImage = flippedHorizontally(testImage);
 		print(flippedImage);
 
-		System.out.println("Vertically Flipped Image:");
+		System.out.println("vertically flipped Image:");
 		Color[][] verticallyFlipped = flippedVertically(testImage);
 		print(verticallyFlipped);
+
+		System.out.println("greyscaled image:");
+		Color[][] greyImage = grayScaled(testImage);
+		print(greyImage);
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
@@ -159,8 +163,18 @@ public class Runigram {
 	 * The image is scaled (resized) to have the given width and height.
 	 */
 	public static Color[][] scaled(Color[][] image, int width, int height) {
-		//// Replace the following statement with your code
-		return null;
+		int originalHeight = image.length;   
+		int originalWidth = image[0].length;  
+		Color[][] scaledImage = new Color[height][width];
+
+		for (int i = 0; i < height; i++) {
+			for (int j = 0; j < width; j++) {
+				int originalI = (i * originalHeight) / height;
+				int originalJ = (j * originalWidth) / width;
+				scaledImage[i][j] = image[originalI][originalJ];
+			}
+		}
+		return scaledImage;
 	}
 	
 	/**
