@@ -35,6 +35,10 @@ public class Runigram {
 		System.out.println("\nReading and printing 'tinypic.ppm':");
 		Color[][] tinyPic = read("tinypic.ppm"); // Assuming 'read' is implemented
 		print(tinyPic);
+
+		System.out.println("Horizontally Flipped Image:");
+		Color[][] flippedImage = flippedHorizontally(testImage);
+		print(flippedImage);
 	}
 
 	/** Returns a 2D array of Color values, representing the image data
