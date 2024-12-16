@@ -102,7 +102,7 @@ public class Runigram {
 		int numCols = image[0].length; // n of columns
 		Color[][] flippedImage = new Color[numRows][numCols];
 	
-		// Flip each row horizontally
+		// Flip each row 
 		for (int i = 0; i < numRows; i++) {
 			for (int j = 0; j < numCols; j++) {
 				flippedImage[i][numCols - 1 - j] = image[i][j];
@@ -115,8 +115,16 @@ public class Runigram {
 	 * Returns an image which is the vertically flipped version of the given image. 
 	 */
 	public static Color[][] flippedVertically(Color[][] image){
-		//// Replace the following statement with your code
-		return null;
+	int numRows = image.length;
+    int numCols = image[0].length; 
+    Color[][] flippedImage = new Color[numRows][numCols];
+
+    for (int i = 0; i < numRows; i++) {
+        for (int j = 0; j < numCols; j++) {
+            flippedImage[numRows - 1 - i][j] = image[i][j];
+        }
+    }
+    return flippedImage;
 	}
 	
 	// Computes the luminance of the RGB values of the given pixel, using the formula 
