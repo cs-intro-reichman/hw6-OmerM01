@@ -67,6 +67,7 @@ public class Runigram {
 	private static void print(Color[][] image) {
 		//// Replace this comment with your code
 		//// Notice that all you have to so is print every element (i,j) of the array using the print(Color) function.
+		for (int i = 0; i < image.length; i++) {
 	}
 	
 	/**
